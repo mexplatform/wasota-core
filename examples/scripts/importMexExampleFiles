@@ -1,0 +1,13 @@
+#/bin/sh
+
+
+for file in `ls ../mexFiles`
+do
+
+  curl -H "Content-Type: multipart/form-data" -X POST \
+    -F graphName=$file \
+    -F format=ttl \
+    -F graph=@../mexFiles/$file \
+    http://localhost:8080/graphFile
+
+done

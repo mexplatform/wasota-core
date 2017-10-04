@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X GET  http://localost:8080/graph?graphName=ciro

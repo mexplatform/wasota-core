@@ -1,0 +1,21 @@
+#!/bin/bash
+
+for file in `ls ../mexWebsiteResources/log4mexResources`
+do
+
+   filename=$file
+   while read -r line
+   do
+       echo "loading rdf from: $line"
+       curl $line > tmp.ttl
+
+       curl -H "Content-Type: multipart/form-data" -X POST \
+         -F graphName=$line \
+         -F format=ttl \
+         -F graph=@./tmp.ttl \
+         http://localhost:8080/graphFile
+
+       echo "Name read from file - $name"
+   done < "$filename"
+done
+rm -fr tmp.ttl

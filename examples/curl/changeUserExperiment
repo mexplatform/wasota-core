@@ -1,0 +1,1 @@
+curl -u ciro:password -H "Content-Type: application/json" -X PUT -d '{"experimentURI":"http://mex.aksw.org/examples/exp_cf_1_2025644708_exe_2_mea_3" }' http://localost:8080/user/changeExperiment

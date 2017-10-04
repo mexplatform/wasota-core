@@ -1,0 +1,102 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix this:  <http://mex.aksw.org/examples/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix mexcore: <http://mex.aksw.org/mex-core#> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix mexperf: <http://mex.aksw.org/mex-perf#> .
+@prefix mexalgo: <http://mex.aksw.org/mex-algo#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+this:exp_2131210819  a          mexcore:Experiment ;
+        rdfs:label              "Experiment: MEX_EXPERIMENT" ;
+        mexcore:experimentHash  "2131210819" ;
+        dct:identifier          "MEX_EXPERIMENT" ;
+        dct:title               "RG-65 Test Collection (State of the art)" ;
+        prov:wasAttributedTo    this:app_2131210819 .
+
+this:exp_cf_1_2131210819_exe_1
+        a                         mexcore:ExecutionOverall ;
+        rdfs:label                "Overall Execution: C1_MEX_EXEC_D1" ;
+        mexcore:endsAtPosition    "" ;
+        mexcore:group             true ;
+        mexcore:startsAtPosition  "" ;
+        prov:generated            this:exp_cf_1_2131210819_exe_1_mea_1 ;
+        prov:id                   "C1_MEX_EXEC_D1" ;
+        prov:used                 this:exp_cf_1_2131210819_exe_1_phase , this:exp_cf_1_2131210819_exe_2_algo ;
+        prov:wasInformedBy        this:exp_cf_1_2131210819 .
+
+this:version  dct:hasVersion  "1.0.2" .
+
+this:exp_cf_1_2131210819_tool
+        a           <http://mex.aksw.org/mex-algo#J&C> ;
+        rdfs:label  "J&C" .
+
+this:exp_cf_1_2131210819_exe_2
+        a                         mexcore:ExecutionOverall ;
+        rdfs:label                "Overall Execution: C1_MEX_EXEC_D2" ;
+        mexcore:endsAtPosition    "" ;
+        mexcore:group             true ;
+        mexcore:startsAtPosition  "" ;
+        prov:generated            this:exp_cf_1_2131210819_exe_2_mea_1 ;
+        prov:id                   "C1_MEX_EXEC_D2" ;
+        prov:used                 this:exp_cf_1_2131210819_exe_2_phase , this:exp_cf_1_2131210819_exe_2_algo ;
+        prov:wasInformedBy        this:exp_cf_1_2131210819 .
+
+this:exp_cf_1_2131210819_exe_2_algo
+        a                 mexalgo:Algorithm ;
+        rdfs:label        "algorithm131" ;
+        dct:identifier    "J&C" ;
+        dcat:landingPage  "http://aclweb.org/aclwiki/index.php?title=RG-65_Test_Collection_(State_of_the_art)" .
+
+this:exp_cf_1_2131210819
+        a                  mexcore:ExperimentConfiguration ;
+        rdfs:label         "Configuration for a set of Executions" ;
+        dct:identifier     "MEX_EXP_CONF_D1" ;
+        prov:used          this:exp_cf_1_2131210819_ds , this:exp_cf_1_2131210819_tool ;
+        prov:wasStartedBy  this:exp_2131210819 .
+
+this:exp_cf_1_2131210819_exe_1_phase
+        a           mexcore:Test ;
+        rdfs:label  "Test" .
+
+this:exp_cf_1_2131210819_exe_1_mea_1
+        a                    mexperf:ClassificationMeasure ;
+        rdfs:label           "Classification measures" ;
+        mexperf:accuracy     "0.804"^^xsd:double ;
+        prov:wasGeneratedBy  this:exp_cf_1_2131210819_exe_1 .
+
+this:app_2131210819  a        mexcore:ApplicationContext ;
+        rdfs:label            "Basic Experiment Infomation" ;
+        dct:dateCopyrighted   "2016.07.08 14:13:09 GMT+01:00" ;
+        prov:actedOnBehalfOf  this:org_2131210819 ;
+        foaf:givenName        "Taher " ;
+        foaf:mbox             "emailexample@aclweb.org" .
+
+this:exp_cf_1_2131210819_ds
+        a                 mexcore:Dataset ;
+        rdfs:label        "Dataset J&C" ;
+        dct:description   "Jiang and Conrath (1997)" ;
+        dct:title         "J&C" ;
+        dcat:landingPage  "http://aclweb.org/aclwiki/index.php?title=RG-65_Test_Collection_(State_of_the_art)" .
+
+this:exp_cf_1_2131210819_exe_2_phase
+        a           mexcore:Test ;
+        rdfs:label  "Test" .
+
+this:exp_cf_1_2131210819_exe_2_mea_1
+        a                    mexperf:ClassificationMeasure ;
+        rdfs:label           "Classification measures" ;
+        mexperf:accuracy     "0.731"^^xsd:double ;
+        prov:wasGeneratedBy  this:exp_cf_1_2131210819_exe_2 .
+
+this:ctx_2131210819  a        mexcore:Context , mexcore:PosTagging ;
+        rdfs:label            "Pos Tagging" ;
+        prov:wasAttributedTo  this:app_2131210819 .
+
+this:org_2131210819  a  prov:Organization ;
+        foaf:givenName  "Sapienza University of Rome " .

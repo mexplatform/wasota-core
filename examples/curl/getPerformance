@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X POST -d "{'context': 'http://mex.aksw.org/mex-core#FactPrediction', 'performance': 'http://mex.aksw.org/mex-perf#accuracy'}" http://localost:8080/performance/get

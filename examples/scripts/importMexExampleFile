@@ -1,0 +1,8 @@
+#/bin/sh
+
+curl -H "Content-Type: multipart/form-data" -X POST \
+  -F graphName=expAndre1.ttl \
+  -F format=ttl \
+  -F graph=@../mexFiles/expAndre1.ttl \
+  http://localhost:8090/graphFile
+
