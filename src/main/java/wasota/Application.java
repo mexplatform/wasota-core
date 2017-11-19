@@ -1,4 +1,4 @@
-package wasota.core;
+package wasota;
 
 import java.io.File;
 import java.util.List;
@@ -23,6 +23,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import wasota.core.UserAuthenticationMongoImpl;
+import wasota.core.UserAuthenticationServiceInterface;
 import wasota.core.authentication.UserAuth;
 import wasota.core.exceptions.CannotAddMexNamespaces;
 import wasota.core.exceptions.graph.NotPossibleToLoadGraph;
@@ -34,9 +36,6 @@ import wasota.core.graph.impl.GraphStoreFSImpl;
 import wasota.core.graph.impl.WasotaGraphJenaImpl;
 import wasota.properties.WasotaProperties;
 
-@Configuration
-@ComponentScan
-@EnableAutoConfiguration
 @SpringBootApplication
 public class Application {
 
