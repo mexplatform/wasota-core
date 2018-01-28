@@ -12,8 +12,7 @@
 	</parent>
 
 	<properties>
-		<!-- The main class to start by executing java -jar -->
-		<start-class>wasota.rest.Application</start-class>
+		<start-class>wasota.Application</start-class>
 	</properties>
 
 	<dependencies>
